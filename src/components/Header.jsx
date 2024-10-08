@@ -1,4 +1,4 @@
-
+import { NavLink } from "react-router-dom"
 
 function Header({pageTitle}) {
 
@@ -9,15 +9,22 @@ function Header({pageTitle}) {
 
             <div className="header-btns">
                 
-                    <button className="btn">
-                        Books
-                    </button>
+                {/* Since BookList is a partial match for all links
+                the end prop will make sure it makes the path EXACTLY
+                to know properly know when the active class should be applied */}
+                    <NavLink to="/BookList/" end>
+                      <button className="btn">
+                          Books
+                      </button>
+                    </NavLink>
 
+                   
+                    <NavLink to="/BookList/add-book" end>
+                      <button className="btn">
+                          Add Book +
+                      </button>
+                      </NavLink>
 
-                    <button className="btn">
-                        Add Book +
-                    </button>
-               
             </div>
     
       </>

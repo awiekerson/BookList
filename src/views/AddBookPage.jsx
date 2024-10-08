@@ -1,6 +1,21 @@
 import Header from '../components/Header.jsx';
+import {Link} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function AddBookPage() {
+
+    const navigate = useNavigate();
+
+    function handleAddBook(event) {
+        event.preventDefault;
+        // Form is not submitted and we can run our own function
+        alert('Book created successfully!');
+        navigate("/BookList/");
+
+    }
+    
     
     const pageTitle = "Add Book";
 
@@ -31,7 +46,7 @@ function AddBookPage() {
                     type="text" name="synopsis" placeholder="Add a synopsis..." />
                 </div>
                 
-                <button className="btn btn-block">Save Book</button>
+                <button onClick={(event) => handleAddBook(event)} className="btn btn-block">Save Book</button>
             </form>
 
         </div>
