@@ -432,3 +432,9 @@ table tr th {
     grid-template-columns: 1fr;
   }
 }
+
+/* Book not found section */
+
+.notFound p {
+  margin: 30px;
+}
